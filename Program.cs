@@ -155,12 +155,13 @@ namespace chunkcat
                             }
                         } else {
                             if (val.Contains("e") || val.Contains("E") || val == "NaN") {
-                                val = BitConverter.ToInt32(content, truepos).ToString();
+                                //val = (BitConverter.ToInt32(content, truepos) / 256f - 32f).ToString();
+                                val = (BitConverter.ToInt16(content, truepos)).ToString() + " " + (BitConverter.ToInt16(content, truepos + 2)).ToString();
                                 Console.ForegroundColor = IntColor;
                                 Console.Write(val.Length > content_width ? val.Substring(0, content_width) : val.PadRight(content_width, ' '));
                             } else if (val == "0") {
                                 Console.ForegroundColor = ZeroColor;
-                                Console.Write("0".PadRight(content_width, ' '));
+                                Console.Write("0 0".PadRight(content_width, ' '));
                             } else {
                                 Console.ForegroundColor = FloatColor;
                                 Console.Write(val.Length > content_width ? val.Substring(0, content_width) : val.PadRight(content_width, ' '));
