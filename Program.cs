@@ -58,10 +58,11 @@ namespace chunkcat
                 int chunksize = BitConverter.ToInt32(content, pos + 4) + 4;
                 File.WriteAllBytes("/Users/henrytownsend/Desktop/output.o", content.Skip(pos + 8).Take(chunksize - 4).ToArray());
                 initial_pos = pos + chunksize;
+                Console.WriteLine();
+                Console.WriteLine(pos + ", " + chunksize);
                 int lineamount = (int)Math.Ceiling((float)chunksize / ((float)linewidth * 4f) + 1f);
                 int content_width = int.Parse(args[3]);
                 int startpos = (int)(pos / (linewidth * 4)) * (linewidth * 4);
-                Console.WriteLine();
                 Console.BackgroundColor = NormalBG;
                 Console.ForegroundColor = NormalFG;
                 int truepos;
