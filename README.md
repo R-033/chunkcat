@@ -1,5 +1,5 @@
 # chunkcat
-Outputs needed chunk and tries to interpret it
+Outputs chunks and tries to interpret them
 
 Usage:
 
