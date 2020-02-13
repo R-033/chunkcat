@@ -56,7 +56,6 @@ namespace chunkcat
                 if (linewidth % 4 != 0)
                     throw new Exception("can't be aligned properly with line width " + linewidth);
                 int chunksize = BitConverter.ToInt32(content, pos + 4) + 4;
-                File.WriteAllBytes("/Users/henrytownsend/Desktop/output.o", content.Skip(pos + 8).Take(chunksize - 4).ToArray());
                 initial_pos = pos + chunksize;
                 Console.WriteLine();
                 Console.WriteLine("offset: " + pos);
