@@ -1,5 +1,5 @@
 # chunkcat
-Outputs EAGL file chunks and tries to interpret them
+Outputs Speed file chunks and tries to interpret them
 
 Usage:
 
